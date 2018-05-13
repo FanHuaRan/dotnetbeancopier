@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace BeanCopier.Core
 {
-    
-    public class BeanCopierFactory
+    /// <summary>
+    /// BeanCopier工厂
+    /// </summary>    
+    public interface BeanCopierFactory
     {
-
+        BeanCopier<T,V> Create<T, V>()
+            where T : class
+            where V : class;
     }
 }

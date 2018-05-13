@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnetbeancopier", "dotnetbeancopier\dotnetbeancopier.csproj", "{4D3689E7-D34B-402A-BF2B-58A4084EC544}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeanCopier.Core", "BeanCopier.Core\BeanCopier.Core.csproj", "{CD3A413A-3E30-48A9-A58B-1EA3ACB7C719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeanCopier.Reflection", "BeanCopier.Reflection\BeanCopier.Reflection.csproj", "{A36D214F-4F3C-49E1-A1A5-81C56D46D39B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeanCopier.ReflectionTests", "BeanCopier.ReflectionTests\BeanCopier.ReflectionTests.csproj", "{D63F708D-023B-4350-AEA6-1DCA39587202}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4D3689E7-D34B-402A-BF2B-58A4084EC544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D3689E7-D34B-402A-BF2B-58A4084EC544}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D3689E7-D34B-402A-BF2B-58A4084EC544}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D3689E7-D34B-402A-BF2B-58A4084EC544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3A413A-3E30-48A9-A58B-1EA3ACB7C719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3A413A-3E30-48A9-A58B-1EA3ACB7C719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3A413A-3E30-48A9-A58B-1EA3ACB7C719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3A413A-3E30-48A9-A58B-1EA3ACB7C719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36D214F-4F3C-49E1-A1A5-81C56D46D39B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36D214F-4F3C-49E1-A1A5-81C56D46D39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36D214F-4F3C-49E1-A1A5-81C56D46D39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36D214F-4F3C-49E1-A1A5-81C56D46D39B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D63F708D-023B-4350-AEA6-1DCA39587202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63F708D-023B-4350-AEA6-1DCA39587202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63F708D-023B-4350-AEA6-1DCA39587202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63F708D-023B-4350-AEA6-1DCA39587202}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

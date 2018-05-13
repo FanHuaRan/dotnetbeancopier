@@ -11,7 +11,7 @@ namespace BeanCopier.Core
     /// </summary>
     public interface BeanCopierGenerator
     {
-        BeanCopier<T, V> Generate<T, V>(Type source, Type destination)
+        BeanCopier<T, V> Generate<T, V>()
             where T : class
             where V : class;
     }

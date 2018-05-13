@@ -11,7 +11,7 @@ namespace BeanCopier.Core
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="V"></typeparam>
-    public interface Converter<T, V>
+    public interface BeanConverter<T, V>
         where T : class
         where V : class
     {
