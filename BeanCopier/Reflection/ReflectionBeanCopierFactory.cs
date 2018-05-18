@@ -27,17 +27,8 @@ namespace BeanCopier.Reflection
             var destination = typeof(V);
 
             var key = buildTheCacheKey(source, destination);
-            var copier = beanCopiers.GetOrAdd(key, p => reflectionBeanCopierGenerator.Generate<T, V>());
 
-            if (copier == null)
-            {
-                return (BeanCopier<T, V>)beanCopiers[key];
-            }
-            else
-            {
-                return (BeanCopier<T, V>)copier;
-            }
-
+            return (BeanCopier<T, V>)beanCopiers.GetOrAdd(key, p => reflectionBeanCopierGenerator.Generate<T, V>());
         }
 
         private String buildTheCacheKey(Type source, Type destination)

@@ -56,5 +56,8 @@
     <Compile Include="Reflection\ReflectionBeanCopierFactory.cs" />
     <Compile Include="Reflection\ReflectionBeanCopierGenerator.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

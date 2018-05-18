@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BeanCopier.Emit
 {
+    /// <summary>
+    /// EmitBeanCopier的相关常量
+    /// </summary>
     internal class EmitBeanCopierConstant
     {
         public static readonly String EMIT_BEAN_COPIER_ASSEMBLY_NAME = "EmitBeanCopierProxy";

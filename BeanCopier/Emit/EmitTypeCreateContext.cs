@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace BeanCopier.Emit
 {
+    /**
+     * Emit代理类的上下文
+     */
     internal class EmitTypeCreateContext
     {
         private readonly  AssemblyBuilder assemblyBuilder;
@@ -29,7 +32,7 @@ namespace BeanCopier.Emit
             this.assemblyBuilder = assemblyBuilder;
             this.moduleBuilder = moduleBuilder;
         }
-
+        #region Singleton
         private static EmitTypeCreateContext instance;
 
         public static EmitTypeCreateContext Instance
@@ -67,5 +70,6 @@ namespace BeanCopier.Emit
         }
 
         private static readonly Object INITIAL_LOCKER = new Object();
+        #endregion
     }
 }

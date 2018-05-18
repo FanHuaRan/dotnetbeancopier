@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BeanCopier.Tests
 {
-    class UserInfo
+    public class UserInfo
     {
         public Int32 Id { get; set; }
 

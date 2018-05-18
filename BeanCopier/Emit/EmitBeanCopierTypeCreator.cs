@@ -9,6 +9,9 @@ using BeanCopier.Core;
 
 namespace BeanCopier.Emit
 {
+    /// <summary>
+    /// 基于Emit的BeanCopier实现类生成，核心是动态代码生成
+    /// </summary>
     internal class EmitBeanCopierTypeCreator
     {
         public Type CreateBeanCopierType<T, V>(ModuleBuilder moduleBuilder,
@@ -38,7 +41,7 @@ namespace BeanCopier.Emit
 
             MethodInfo copyWithConverterMethodInfoInfo = typeof(BeanCopier<T, V>).GetMethod("Copy", new Type[]{
                 typeof(T),typeof(V),typeof(BeanConverter<T,V>)});
-            typeBuilder.DefineMethodOverride(methodBuilder, copyWithConverterMethodInfoInfo);
+            typeBuilder.DefineMethodOverride(methodWithConverterBuilder, copyWithConverterMethodInfoInfo);
 
            // EmitTypeCreateContext.Instance.AssemblyBuilder.Save(EmitBeanCopierConstant.EMIT_BEAN_COPIER_ASSEMBLY_FILE);
 

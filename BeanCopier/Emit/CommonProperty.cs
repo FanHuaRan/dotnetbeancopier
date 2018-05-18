@@ -28,14 +28,35 @@ namespace BeanCopier.Emit
                 throw new ArgumentException("property must not be null");
             }
 
+            // 类型是否相等
             var typeEquals = sourceProperty.PropertyType.Equals(desProperty.PropertyType);
+            // 名字是否相同
             var nameEquals = sourceProperty.Name.Equals(desProperty.Name);
-            return typeEquals && nameEquals;
+            if (!typeEquals || !nameEquals)
+            {
+                return false;
+            }
+
+            // 源的属性的get方法需要是public
+            var sourcePropertyGetMethod = sourceProperty.GetGetMethod();
+            if (sourcePropertyGetMethod == null || !sourcePropertyGetMethod.IsPublic)
+            {
+                return false;
+            }
+
+            // 目标的属性的set方法需要是public
+            var desPropertySetMethod = sourceProperty.GetSetMethod();
+            if (desPropertySetMethod == null || !desPropertySetMethod.IsPublic)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public static CommonProperty<T, V>[] GetCommonPropertyPairs(Type sourceType, Type desType)
         {
-            checkTypeParam<T, V>(sourceType, desType);
+            CheckTypeParam<T, V>(sourceType, desType);
 
             IList<CommonProperty<T, V>> commonPropertyPairs = new List<CommonProperty<T, V>> ();
 
@@ -52,7 +73,7 @@ namespace BeanCopier.Emit
             return commonPropertyPairs.ToArray();
         }
 
-        private static void checkTypeParam<T, V>(Type source, Type destination)
+        private static void CheckTypeParam<T, V>(Type source, Type destination)
             where T : class
            where V : class
         {
