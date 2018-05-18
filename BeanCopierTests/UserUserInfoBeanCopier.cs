@@ -18,7 +18,8 @@ namespace BeanCopierTests
 
         public void Copy(User source, UserInfo destination, BeanConverter<User, UserInfo> beanConverter)
         {
-            throw new NotImplementedException();
+            destination.Name = source.Name;
+            beanConverter.Convert(source, destination);
         }
     }
 }

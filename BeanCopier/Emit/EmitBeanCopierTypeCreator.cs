@@ -115,14 +115,18 @@ namespace BeanCopier.Emit
             }
             // 如果修改操作码，则填补空间
             ilGenerator.Emit(OpCodes.Nop);
-            // 第二个参数入栈顶
-            ilGenerator.Emit(OpCodes.Ldarg_2);
-            // 第一个参数入栈顶
-            ilGenerator.Emit(OpCodes.Ldarg_1);
             // 第三个参数入栈
             ilGenerator.Emit(OpCodes.Ldarg_3);
+            // 第一个参数入栈顶
+            ilGenerator.Emit(OpCodes.Ldarg_1);
+            // 第二个参数入栈顶
+            ilGenerator.Emit(OpCodes.Ldarg_2);
+
             // 调用converter的convert方法
             ilGenerator.Emit(OpCodes.Callvirt,converterType.GetMethod("Convert", new Type[] { typeof(T), typeof(V) }));
+
+            // 结果出栈
+            ilGenerator.Emit(OpCodes.Pop);
 
             // 如果修改操作码，则填补空间
             ilGenerator.Emit(OpCodes.Nop);

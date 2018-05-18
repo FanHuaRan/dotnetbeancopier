@@ -40,7 +40,25 @@ namespace BeanCopier.Emit.Tests
         [TestMethod()]
         public void copyTest1()
         {
-            // TODO
+            BeanCopier<User, UserInfo> beanCopier = beanCopier = EmitBeanCopierFactory.Instance.Create<User, UserInfo>();
+            var user = new User()
+            {
+                Name = "Tom",
+                Id = 1,
+                Age = 12,
+                Password = "****"
+            };
+
+            var userInfo = new UserInfo();
+
+            var selfConverter = new SelfConverter();
+
+            beanCopier.Copy(user, userInfo, selfConverter);
+
+            Assert.AreEqual(user.Name, userInfo.Name);
+            Assert.AreEqual(user.Id, userInfo.Id);
+            Assert.AreEqual(user.Age, userInfo.Age);
+            Assert.AreEqual(null, userInfo.Gender);
         }
 
         [TestMethod()]
@@ -69,4 +87,12 @@ namespace BeanCopier.Emit.Tests
         }
     }
 
+    public class SelfConverter : BeanConverter<User, UserInfo>
+    {
+        public UserInfo Convert(User souce, UserInfo target)
+        {
+            Console.WriteLine("Hello World");
+            return target;
+        }
+    }
 }

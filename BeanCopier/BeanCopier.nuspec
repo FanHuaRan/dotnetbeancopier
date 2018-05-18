@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Huaran Fan</authors>
+    <owners>Huaran Fan</owners>
+    <licenseUrl>https://github.com/FanHuaRan/dotnetbeancopier/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/FanHuaRan/dotnetbeancopier</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>dotnetbeancopier is a simple copier-tool for different objects</description>
+    <releaseNotes>fix converter bug.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>Bean Copier Tool</tags>
+  </metadata>
+</package>
