@@ -17,17 +17,8 @@ namespace BeanCopier.Emit.Tests
         [TestMethod()]
         public void copyTest()
         {
-            BeanCopier<User, UserInfo> beanCopier = null;
-            try
-            {
-                 beanCopier = EmitBeanCopierFactory.Instance.Create<User, UserInfo>();
-            }
-            catch (Exception er)
-            {
-                Console.Write('A');
-            }
-
-        var user = new User()
+            BeanCopier<User, UserInfo> beanCopier = beanCopier = EmitBeanCopierFactory.Instance.Create<User, UserInfo>();
+            var user = new User()
             {
                 Name = "Tom",
                 Id = 1,
@@ -77,4 +68,5 @@ namespace BeanCopier.Emit.Tests
             Assert.AreEqual(null, userInfo.Gender);
         }
     }
+
 }
